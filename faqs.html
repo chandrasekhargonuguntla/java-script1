@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.faq-container {
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.faq-question h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.toggle-btn {
+  font-size: 1.5rem;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px 0;
+  color: #555;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .toggle-btn {
+  transform: rotate(180deg); 
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What is HTML?</h3>
+        <span class="toggle-btn">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>HTML stands for Hypertext Markup Language. It is the standard language for creating web pages.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What is CSS?</h3>
+        <span class="toggle-btn">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>CSS stands for Cascading Style Sheets. It is used to style and layout web pages.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What is JavaScript?</h3>
+        <span class="toggle-btn">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>JavaScript is a programming language that is used to make web pages interactive and dynamic.</p>
+      </div>
+    </div>
+  </div>
+  <script >
+   const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  item.addEventListener('click', () => {
+    
+    faqItems.forEach(i => i.classList.remove('active'));
+
+    item.classList.toggle('active');
+  });
+});
+
+
+  </script>
+</body>

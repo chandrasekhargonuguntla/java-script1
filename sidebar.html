@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #07d400;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #000000;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+}
+.content {
+  padding: 20px;
+  flex: 1;
+}
+
+.open-btn {
+  background-color: #07d400;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.open-btn:hover {
+  background-color: #000000;
+}
+.sidebar-open {
+  width: 250px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div id="sidebar" class="sidebar">
+    <a href="#" class="close-btn" id="close-btn">&times;</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="content">
+    <button class="open-btn" id="open-btn"> ☰ Open Sidebar ☰ </button>
+     </div>
+
+  <script >
+const sidebar = document.getElementById("sidebar");
+const openBtn = document.getElementById("open-btn");
+const closeBtn = document.getElementById("close-btn");
+openBtn.addEventListener("click", function() {
+  sidebar.style.width = "250px";
+});
+closeBtn.addEventListener("click", function() {
+  sidebar.style.width = "0";
+});
+
+  </script>
+</body>
+</html>
